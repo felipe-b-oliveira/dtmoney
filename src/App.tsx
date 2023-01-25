@@ -5,13 +5,22 @@ import {Dashboard} from "./components/Dashboard";
 import {GlobalStyle} from "./styles/global";
 import {NewTransactionModal} from "./components/NewTransactionModal";
 
+/**
+* Author: Felipe Oliveira
+* Description: Temporary implementation of props for study purposes. In future the component will be reorganized and
+* the props will be passed to buttton using React Context API.
+*/
 export function App() {
     const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
 
+    // React naming function convention: 
+    // When a function indicates a user interation, we uses the 'handle' before function name.
     function handleOpenNewTransactionModal() {
         setIsNewTransactionModalOpen(true);
     }
 
+    // React naming function convention:
+    // When a function indicates a user interation, we uses the 'handle' before function name.
     function handleCloseNewTransactionModal() {
         setIsNewTransactionModalOpen(false);
     }
@@ -22,8 +31,8 @@ export function App() {
 
             <Dashboard />
 
-            <NewTransactionModal 
-                isOpen={isNewTransactionModalOpen} 
+            <NewTransactionModal
+                isOpen={isNewTransactionModalOpen}
                 onRequestClose={handleCloseNewTransactionModal}
             />
 
