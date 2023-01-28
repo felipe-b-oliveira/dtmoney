@@ -1,14 +1,14 @@
-# Movie List
-> Aplicação de Estudo - Aplicação React Simples
+# Title
+> Study Application - Simple React Hooks-Based Aplicattion
 
-## Tecnologias
+## Technologies
 
 * [ReactJS](https://reactjs.org/)
 * [Typescript](https://www.typescriptlang.org/)
 * [Vite](https://vitejs.dev/)
 
-## Execução
+## Installation
 
-* Efetue o clone do projeto `git clone https://github.com/felipe-b-oliveira/dtmoney.git`
-* Instale as dependências com o comando `yarn`
-* Execute o projeto com o comando `yarn dev`
+* Clone the project `git clone https://github.com/felipe-b-oliveira/dtmoney.git`
+* Install the dependencies `yarn`
+* Run the project `yarn dev`
