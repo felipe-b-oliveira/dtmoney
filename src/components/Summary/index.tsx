@@ -6,8 +6,11 @@ import {TransactionsContext} from "../../TransactionsContext";
 
 import {Container} from "./styles";
 
+const FILE_NAME = 'Summary';
 export function Summary() {
-    const transactions = useContext(TransactionsContext);
+    const {transactions} = useContext(TransactionsContext);
+
+    console.log(`${FILE_NAME}::transactions`, transactions);
 
     return (
         <Container>

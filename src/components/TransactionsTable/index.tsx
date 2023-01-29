@@ -2,8 +2,11 @@ import {useContext} from "react";
 import {TransactionsContext} from "../../TransactionsContext";
 import {Container} from "./styles";
 
+const FILE_NAME = 'TransactionsTable';
 export function TransactionsTable() {
-    const transactions = useContext(TransactionsContext);
+    const {transactions} = useContext(TransactionsContext);
+
+    console.log(`${FILE_NAME}::transactions`, transactions);
 
     return (
         <Container>
