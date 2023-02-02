@@ -35,15 +35,22 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
      * PreventDefault: Prevines html default behavior, in the case of this form, the method prevents html from reloading
      * the whole page because of form submit action.
      */
-    function handleCreateNewTransaction(e:FormEvent) {
+    async function handleCreateNewTransaction(e:FormEvent) {
         e.preventDefault();
 
-        createTransaction({
+        await createTransaction({
             title,
             amount,
             category,
             type,
         })
+
+        setTitle('');
+        setAmount(0);
+        setCategory('');
+        setType('deposit');
+
+        onRequestClose();
     }
 
     return (
