@@ -31,7 +31,7 @@ interface TransactionProviderProps {
 // Allows to pass createTransation method on Context.Provider
 interface TransactionsContextData {
     transactions: Transaction[];
-    createTransaction: (transaction: TransactionInput) => void;
+    createTransaction: (transaction: TransactionInput) => Promise<void>;
 }
 
 // Hack to Typescript not to be throwing errors about default value.
@@ -48,8 +48,19 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
             .then(response => setTransactions(response.data.transactions));
     }, []);
 
-    function createTransaction(transaction: TransactionInput) {
-        api.post('/transactions', transaction);
+    async function createTransaction(transactionInput: TransactionInput) {
+        const response = await api.post('/transactions', {
+            ...transactionInput,
+            createdAt: new Date(),
+        });
+        
+        const {transaction} = response.data;
+
+        // React imutability concept, we copy all array and add the new information in the end of it.
+        setTransactions([
+            ...transactions,
+            transaction,
+        ]);
     }
 
     return (
