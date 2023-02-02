@@ -70,6 +70,7 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
     );
 }
 
+// Exporting a custom hooks
 export function useTransactions() {
     const context = useContext(TransactionsContext);
 
